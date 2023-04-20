@@ -6,20 +6,30 @@ import org.junit.Test;
 public class MainClassTest {
     @Before
     public void startTest(){
-        System.out.println("Запускаем тест");
+        System.out.println("Запускаем тесты");
+    }
+    @After
+    public void finishTest(){
+        System.out.println("Конец теста");
     }
     @Test
     public void testGetLocalNumber(){
        int actual = new MainClass().local_number;
        final int expected = 14;
 
-       Assert.assertTrue("Метод не вернул нужное значение", actual==expected);
-        System.out.println("Тест прошел");
+       Assert.assertTrue("Число local_number != 14", actual==expected);
+        System.out.println("Тест№1 прошел");
     }
 
-    @After
-    public void finishTest(){
-        System.out.println("Конец теста");
+    @Test
+    public void testGetClassNumber(){
+        int class_number = new MainClass().getClassNumber();
+        final int greater_number = 45;
+
+        Assert.assertTrue("Число class_number <= 45", class_number>greater_number);
+        System.out.println("Тест№2 прошел");
     }
+
+
 
 }
