@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Locale;
+
 public class MainClassTest {
     @Before
     public void startTest(){
@@ -28,6 +30,12 @@ public class MainClassTest {
 
         Assert.assertTrue("Число class_number <= 45", class_number>greater_number);
         System.out.println("Тест№2 прошел");
+    }
+    @Test
+    public void testGetClassString(){
+        String actual = "hello";
+        String expected = new MainClass().getClassString();
+        Assert.assertTrue("Строка expected не содержит в себе строку actual",expected.toLowerCase().contains(actual));
     }
 
 
