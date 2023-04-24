@@ -34,8 +34,9 @@ public class MainClassTest {
     @Test
     public void testGetClassString(){
         String actual = "hello";
+        String actual_capital = "Hello";
         String expected = new MainClass().getClassString();
-        Assert.assertTrue("Строка expected не содержит в себе строку actual",expected.toLowerCase().contains(actual));
+        Assert.assertTrue("Строка expected не содержит в себе строку actual",expected.contains(actual)||expected.contains(actual_capital));
     }
 
 
